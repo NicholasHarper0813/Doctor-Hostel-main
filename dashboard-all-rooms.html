@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsiive Admin Dashboard | Spring Store</title>
+    <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxs-bank'></i>
+      <span class="logo_name"> Admin </span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="dashboard.html" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li id="all-rooms">
+          <a href="dashboard-all-rooms.html">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">All Rooms</span>
+          </a>
+        </li>
+        <li>
+          <a href="tenants-list.html">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Tenant(s) list</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-book-alt' ></i>
+            <span class="links_name">Total order</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Messages</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Setting</span>
+          </a>
+        </li>
+        <li class="log_out" id="log-out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <div id="adminProfile"></div>
+        <span class="admin_name" id="adminName"></span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+
+    <div class="home-content home-content-all-rooms">
+      <div class="sales-boxes" >
+        <!-- RECENT SALES BOX ITEMS -->
+        <div class="recent-sales box recent-sales-all-rooms">
+          <div class="container my-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">Add room</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+      
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+      
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add new room</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+      
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <!-- <form action=""> -->
+                            <div class="my-3">
+                                <label for="">Room name</label>
+                                <input type="text" name="room-name" id="room-name" class="form-control">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Room type</label>
+                                <input type="room-type" name="room-type" id="room-type" class="form-control">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Room address</label>
+                                <input type="text" name="room-address" id="room-address" class="form-control">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Room price</label>
+                                <input type="number" name="room-price" id="room-price" class="form-control">
+                            </div>
+                            <div class="my-3">
+                                <h2>Room amenities:</h2>
+                                <label for="room-amenities-text">Amenity 1:</label>
+                                <input type="text" name="room-amenities-text" id="room-amenities-text-1" class="form-control">
+                                <label for="room-amenities-text">Amenity 2:</label>
+                                <input type="text" name="room-amenities-text" id="room-amenities-text-2" class="form-control">    
+                                <label for="room-amenities-text">Amenity 3:</label>
+                                <input type="text" name="room-amenities-text" id="room-amenities-text-3" class="form-control">                         
+                            </div>
+                            <div class="my-3">
+                                <h2>Room amenity images:</h2>
+                                <input type="file" name="room-amenities-image" id="room-amenities-image-1" class="form-control">
+                                <input type="file" name="room-amenities-image" id="room-amenities-image-2" class="form-control">
+                                <input type="file" name="room-amenities-image" id="room-amenities-image-3" class="form-control">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Room ratings</label>
+                                <input type="text" name="room-rating" id="room-rating" class="form-control">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Room description</label>
+                                <input type="text" name="room-description" id="room-description" class="form-control">
+                            </div>                        
+                            <div class="my-3">
+                                <label for="">Room phone number</label>
+                                <input type="number" name="room-phone-call" id="room-phone-call" class="form-control">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Room latitude</label>
+                                <input type="number" name="room-lat" id="room-lat" class="form-control">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Room longitude</label>
+                                <input type="number" name="room-long" id="room-long" class="form-control">
+                            </div>
+                            <div class="my-3">
+                                <h2>Room photos:</h2>
+                                <input type="file" name="room-photos" id="room-photos-0" class="form-control">
+                                <input type="file" name="room-photos" id="room-photos-1" class="form-control">
+                                <input type="file" name="room-photos" id="room-photos-2" class="form-control">
+                            </div>
+                            <div class="my-3">
+                                <button class="btn btn-primary" type="submit" id="save-room">Save</button>
+                            </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <div class="modal fade" id="editModel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Update user</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+      
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <!-- <form action=""> -->
+                            <div class="my-3">
+                                <label for="">Username</label>
+                                <input type="text" name="edit-user-name" id="edit-user-name" class="form-control">
+                                <input type="hidden" name="id" id="user_id" class="form-control">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Email</label>
+                                <input type="text" name="edit-user-email" id="edit-user-email" class="form-control">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Mobile</label>
+                                <input type="number" name="edit-user-phone-no" id="edit-user-phone-no" class="form-control">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Password</label>
+                                <input type="text" name="edit-user-password" id="edit-user-password" class="form-control">
+                            </div>
+                            <div class="my-3">
+                                <button class="btn btn-primary" type="submit" id="update">Update</button>
+                            </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <div class="title">Rooms</div>
+          
+          <div class="sales-details sales-details-all-rooms ">
+
+            <ul class="details" id="details">
+              <li class="topic">Date added</li>
+              <div id="all-rooms-added">
+
+              </div>
+            </ul>
+
+            <ul class="details">
+              <li class="topic">Room name</li>
+                <div id="all-rooms-name">
+                
+               </div>
+            </ul>
+
+            <ul class="details">
+              <li class="topic">Room type</li>
+              <div id="all-rooms-type">
+                
+              </div>
+            </ul>
+
+            <ul class="details">
+              <li class="topic">Room price</li>
+              <div id="all-rooms-price">
+                
+              </div>
+            </ul>
+
+            <ul class="details">
+              <li class="topic">Room status</li>
+              <div id="all-rooms-status">
+                
+              </div>
+            </ul>
+
+            <ul class="details">
+              <li class="topic">Update room</li>
+              <div id="all-rooms-update">
+                
+              </div>
+            </ul>
+
+            <ul class="details">
+              <li class="topic">Delete room</li>
+              <div id="all-rooms-delete">
+                
+              </div>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="rooms.js"></script>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function() {
+      sidebar.classList.toggle("active");
+      if(sidebar.classList.contains("active")){
+      sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+      }else
+    sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu"); 
+    }
+ </script>
+
+</body>
+</html>

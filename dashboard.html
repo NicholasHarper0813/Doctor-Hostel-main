@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsiive Admin Dashboard | Spring Store</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxs-bank'></i>
+      <span class="logo_name"> Admin </span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="dashboard.html" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li id="all-rooms">
+          <a href="dashboard-all-rooms.html">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">All Rooms</span>
+          </a>
+        </li>
+        <li>
+          <a href="tenants-list.html">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Tenants list</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-book-alt' ></i>
+            <span class="links_name">Total order</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Messages</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Setting</span>
+          </a>
+        </li>
+        <li class="log_out" id="log-out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <div id="adminProfile"></div>
+        <span class="admin_name" id="adminName"></span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total Rooms</div>
+            <div class="number">
+              <span id="totalRooms"></span>
+            </div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Up from yesterday</span>
+            </div>
+          </div>
+          <i class='bx bx-cart-alt cart'></i>
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Available Rooms</div>
+            <div class="number">
+              <span id="availableRooms"></span>
+            </div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Up from yesterday</span>
+            </div>
+          </div>
+          <i class='bx bxs-cart-add cart two' ></i>
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Booked Rooms</div>
+            <div class="number">
+              <span id="bookedRooms"></span>
+            </div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Up from yesterday</span>
+            </div>
+          </div>
+          <i class='bx bx-cart cart three' ></i>
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total Icome</div>
+            <div class="number">
+              <span id="totalIncome"></span>
+            </div>
+            <div class="indicator">
+              <i class='bx bx-down-arrow-alt down'></i>
+              <span class="text">Down From Today</span>
+            </div>
+          </div>
+          <i class='bx bxs-cart-download cart four' ></i>
+        </div>
+      </div>
+
+      <div class="sales-boxes" >
+        <!-- RECENT SALES BOX ITEMS -->
+        <div class="recent-sales box">
+          <div class="title">Rooms</div>
+          <div class="sales-details">
+
+            <ul class="details" id="details">
+              <li class="topic">Date added</li>
+              <div id="dateAdded">
+
+              </div>
+            </ul>
+
+            <ul class="details">
+              <li class="topic">Room name</li>
+                <div id="roomName">
+                
+               </div>
+            </ul>
+
+            <ul class="details">
+              <li class="topic">Room type</li>
+              <div id="roomType">
+                
+              </div>
+            </ul>
+
+            <ul class="details">
+              <li class="topic">Room price</li>
+              <div id="roomPrice">
+                
+              </div>
+            </ul>
+
+          </div>
+          <div class="button">
+            <a href="dashboard-all-rooms.html">See All</a>
+          </div>
+        </div>
+
+
+        <!-- TOP SALES AND RECENT ROOMS BOX -->
+        <div class="top-sales box">
+          <div class="title">Recent Rooms</div>
+            <ul class="top-sales-details" id="recentRooms">
+
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="rooms.js"></script>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function() {
+      sidebar.classList.toggle("active");
+      if(sidebar.classList.contains("active")){
+      sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+      }else
+    sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu"); 
+    }
+ </script>
+
+</body>
+</html>
