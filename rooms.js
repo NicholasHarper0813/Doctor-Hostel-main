@@ -1,7 +1,5 @@
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im55eW96c2pudm5iZ2x1ZHBudmp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODc0MTI1MzUsImV4cCI6MjAwMjk4ODUzNX0.tnGcjAMt7dFMrv5Hib0zUb5EgEyayfn5YnSH13LiAUg";
-
 const url = "https://nyyozsjnvnbgludpnvjy.supabase.co";
-
 const database = supabase.createClient(url, key);
     // Logout button redirection
     let logoutButton = document.getElementById("log-out");
@@ -13,9 +11,6 @@ const database = supabase.createClient(url, key);
     let admin_ID = localStorage.getItem("id");
     let admin_n = localStorage.getItem("admin");
     let admin_profile = localStorage.getItem("adminProfile");
-    console.log(admin_ID);
-    console.log(admin_n);
-    console.log(admin_profile);
    
     // Check if the admin uID exists, if no, redirect to login page else continue
     if (!admin_ID) {
@@ -49,7 +44,6 @@ const database = supabase.createClient(url, key);
         availableRooms.innerText = res.data.length;
     }
     getAvailableRooms();
-    // Available rooms CRUD operation...
 
     // Let's retrieve the total number of booked rooms in the database
     const getTotalBookedRooms = async () => {
@@ -136,8 +130,6 @@ const database = supabase.createClient(url, key);
         roomPriceDiv.innerHTML = priceList;
     }
     getRooms();
-    // All admin rooms CRUD operation...
-
 
     // Let's retrieve all the admin's rooms
     const getTenantList = async () => {
