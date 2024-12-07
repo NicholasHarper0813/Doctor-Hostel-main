@@ -10,7 +10,7 @@ let login = document.querySelector("#signin");
 var id;
 var admin_name;
 var admin_profile;
-//  Event CRUD operation...
+
 login.addEventListener("click", async (e) => {
     e.preventDefault();
     let email = document.querySelector("#email").value;
